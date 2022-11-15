@@ -27,13 +27,11 @@ type GLTFResult = GLTF & {
     patch: THREE.MeshStandardMaterial;
   };
 };
-
+const modelUrl = "https://ogodeverest.github.io/shoe-configuration/shoe.glb";
 export default function Shoe(props: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>(null);
 
-  const { nodes, materials } = useGLTF(
-    "https://ogodeverest.github.io/shoe-configuration/shoe.glb"
-  ) as unknown as GLTFResult;
+  const { nodes, materials } = useGLTF(modelUrl) as unknown as GLTFResult;
 
   const items: ConfigItems = useConfigStore((state) => state.items);
   const hovered = useConfigStore((state) => state.hovered);
@@ -166,4 +164,4 @@ export default function Shoe(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/shoe.glb");
+useGLTF.preload(modelUrl);
