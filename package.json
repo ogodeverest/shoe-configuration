@@ -1,5 +1,6 @@
 {
   "name": "shoe-config",
+  "homepage": "https://ogodeverest.github.io/shoe-configuration",
   "private": true,
   "version": "0.0.0",
   "type": "module",
