@@ -73,14 +73,18 @@ export default function Shoe(props: JSX.IntrinsicElements["group"]) {
       ref={group}
       onPointerOver={(e) => {
         e.stopPropagation();
-        setHovered((e.object as THREE.Mesh).material.name);
+        const material = (e.object as THREE.Mesh)
+          .material as THREE.MeshStandardMaterial;
+        setHovered(material.name as keyof ConfigItems);
       }}
       onPointerOut={(e) => {
         if (e.intersections.length === 0) setHovered(null);
       }}
       onPointerDown={(e) => {
         e.stopPropagation();
-        setCurrent((e.object as THREE.Mesh).material.name);
+        const material = (e.object as THREE.Mesh)
+          .material as THREE.MeshStandardMaterial;
+        setCurrent(material.name as keyof ConfigItems);
       }}
       onPointerMissed={(e) => {
         setCurrent("mesh");
