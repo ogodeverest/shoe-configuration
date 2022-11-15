@@ -31,7 +31,9 @@ type GLTFResult = GLTF & {
 export default function Shoe(props: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>(null);
 
-  const { nodes, materials } = useGLTF("/shoe.glb") as unknown as GLTFResult;
+  const { nodes, materials } = useGLTF(
+    "https://ogodeverest.github.io/shoe-configuration/shoe.glb"
+  ) as unknown as GLTFResult;
 
   const items: ConfigItems = useConfigStore((state) => state.items);
   const hovered = useConfigStore((state) => state.hovered);
