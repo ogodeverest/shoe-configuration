@@ -27,7 +27,8 @@ type GLTFResult = GLTF & {
     patch: THREE.MeshStandardMaterial;
   };
 };
-const modelUrl = "https://ogodeverest.github.io/shoe-configuration/shoe.glb";
+const modelUrl = "./shoe.glb";
+
 export default function Shoe(props: JSX.IntrinsicElements["group"]) {
   const group = useRef<THREE.Group>(null);
 
